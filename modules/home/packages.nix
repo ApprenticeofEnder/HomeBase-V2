@@ -26,9 +26,9 @@
     nmap
     gnutls
     tcpdump
-    wireshark
-    _1password-gui
-    _1password-cli
+    # wireshark
+    # _1password-gui
+    # _1password-cli
   ];
 
   devops = with pkgs; [
