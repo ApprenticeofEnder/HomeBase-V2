@@ -26,8 +26,8 @@
     nmap
     gnutls
     tcpdump
-    # wireshark
-    # _1password-gui
+    # wireshark # TODO: Figure out why THIS one fails
+    # _1password-gui # TODO: Figure out how to get unfree bullshit to work
     # _1password-cli
   ];
 
