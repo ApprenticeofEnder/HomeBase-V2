@@ -27,7 +27,7 @@
     gnutls
     tcpdump
     # wireshark # TODO: Figure out why THIS one fails
-    # _1password-gui # TODO: Figure out how to get unfree bullshit to work
+    # _1password-gui # TODO: Work out the whole user/group requirement thing
     # _1password-cli
   ];
 
