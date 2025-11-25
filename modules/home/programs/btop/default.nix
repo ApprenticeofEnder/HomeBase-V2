@@ -5,7 +5,10 @@
       nordic = builtins.readFile ./themes/nordic.theme;
     };
     settings = {
-      theme = "nordic";
+      color_theme = "nordic";
+      vim_keys = true;
+      shown_boxes = "mem net cpu proc gpu0";
+      proc_sortiing = "memory";
     };
   };
 }
