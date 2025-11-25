@@ -8,7 +8,7 @@
       color_theme = "nordic";
       vim_keys = true;
       shown_boxes = "mem net cpu proc gpu0";
-      proc_sortiing = "memory";
+      proc_sorting = "memory";
     };
   };
 }
