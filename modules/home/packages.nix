@@ -39,6 +39,7 @@
   ];
 
   utility = with pkgs; [
+    pik
     less # needed for Ubuntu
     just
     tree
