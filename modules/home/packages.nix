@@ -32,6 +32,7 @@
   ];
 
   devops = with pkgs; [
+    act
     ansible
     opentofu
     ansible-lint
