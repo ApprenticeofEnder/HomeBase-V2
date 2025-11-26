@@ -13,8 +13,7 @@
     plugins = [
       {
         name = "1password";
-        src = ./plugins/op;
-        file = "${config.xdg.configHome}/op/plugins.sh";
+        src = ./plugins/1password/1password.plugin.zsh;
       }
     ];
 
