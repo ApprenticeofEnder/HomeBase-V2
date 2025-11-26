@@ -9,12 +9,14 @@
     git = {
       enable = true;
       settings = {
+        init.defaultBranch = "main";
+        pull.rebase = false;
         user = {
           name = config.me.fullname;
           email = config.me.email;
         };
-        aliases = {
-          ci = "commit";
+        alias = {
+          ga = "git add .";
         };
         # init.defaultBranch = "master";
         # pull.rebase = "false";

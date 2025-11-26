@@ -1,0 +1,5 @@
+{
+  programs.mu = {
+    enable = true;
+  };
+}
