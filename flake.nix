@@ -25,10 +25,13 @@
   };
 
   # Wired using https://nixos-unified.org/guide/autowiring
-  outputs = inputs:
-    inputs.nixos-unified.lib.mkFlake
-    {
-      inherit inputs;
-      root = ./.;
-    };
+  outputs = inputs: let
+    flake =
+      inputs.nixos-unified.lib.mkFlake
+      {
+        inherit inputs;
+        root = ./.;
+      };
+  in
+    flake;
 }
