@@ -1,4 +1,9 @@
-{
+{pkgs, ...}: let
+  identityAgent =
+    if pkgs.stdenv.isLinux
+    then "~/.1password/agent.sock"
+    else "'~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock'";
+in {
   programs.ssh = {
     enable = true;
     # includes = [];
@@ -36,7 +41,7 @@
         host = "github.com";
         checkHostIP = true;
         identityFile = ["~/.ssh/github.pub"];
-        identityAgent = ["~/.1password/agent.sock"];
+        identityAgent = [identityAgent];
         identitiesOnly = true;
       };
 
@@ -50,7 +55,7 @@
           strictHostKeyChecking = "no";
         };
         identityFile = ["~/.ssh/cybersci_2025_regionals.pub"];
-        identityAgent = ["~/.1password/agent.sock"];
+        identityAgent = [identityAgent];
         identitiesOnly = true;
       };
 
@@ -64,7 +69,7 @@
           strictHostKeyChecking = "no";
         };
         identityFile = ["~/.ssh/cybersci_2025_regionals.pub"];
-        identityAgent = ["~/.1password/agent.sock"];
+        identityAgent = [identityAgent];
         identitiesOnly = true;
       };
 
@@ -75,7 +80,7 @@
         hostname = "10.0.2.22";
         checkHostIP = true;
         identityFile = ["~/.ssh/cybersci_2025_regionals.pub"];
-        identityAgent = ["~/.1password/agent.sock"];
+        identityAgent = [identityAgent];
         identitiesOnly = true;
       };
 
@@ -86,7 +91,7 @@
         hostname = "192.168.18.100";
         checkHostIP = true;
         identityFile = ["~/.ssh/pi_master.pub"];
-        identityAgent = ["~/.1password/agent.sock"];
+        identityAgent = [identityAgent];
         identitiesOnly = true;
       };
 
