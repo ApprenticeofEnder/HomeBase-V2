@@ -10,12 +10,13 @@
     enableCompletion = true;
     shellAliases.mkdir = "mkdir -p";
 
-    plugins = [
-      {
-        name = "1password";
-        src = ./plugins/1password/1password.plugin.zsh;
-      }
-    ];
+    # plugins = [
+    #   {
+    #     name = "1password";
+    #     src = ./plugins/1password/1password.plugin.zsh;
+    #     file = "1password/1password.plugin.zsh";
+    #   }
+    # ];
 
     history = {
       size = 10000;

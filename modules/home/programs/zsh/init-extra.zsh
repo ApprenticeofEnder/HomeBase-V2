@@ -42,3 +42,5 @@ function pathunmunge() {
 }
 
 pathprepend PATH "${HOME}/.local/bin"
+
+source "${HOME}/.config/op/plugins-nix.sh"

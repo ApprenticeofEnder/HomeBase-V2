@@ -4,5 +4,8 @@
       source = ./fit.sh;
       executable = true;
     };
+    ".config/op/plugins-nix.sh" = {
+      source = ./op.sh;
+    };
   };
 }
