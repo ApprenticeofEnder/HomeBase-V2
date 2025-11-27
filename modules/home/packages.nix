@@ -72,51 +72,7 @@
 in {
   home.packages = with pkgs;
     [
-      (writeShellScriptBin "yls" ''
-        function divider(){
-          unset -x
-          echo "---------------------------------------"
-          set -x
-        }
-
-        set -x
-
-        TARGET="$1"
-
-        which $TARGET
-
-        divider
-
-        if [ -x "$(command -v where)" ]; then
-          where $TARGET
-
-          divider
-        fi
-
-        if [ -x "$(command -v where)" ]; then
-          whereis $TARGET
-
-          divider
-        fi
-
-        if [ -x "$(command -v brew)" ]; then
-          brew list | grep $TARGET
-
-          divider
-        fi
-
-        if [ -x "$(command -v apt)" ]; then
-          apt list --installed | grep $TARGET
-
-          divider
-        fi
-
-        if [ -x "$(command -v yay)" ]; then
-          yay -Qqe | grep $TARGET
-
-          divider
-        fi
-      '')
+      (writeShellScriptBin "yls" builtins.readFile ./scripts/yls.sh)
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
       # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
