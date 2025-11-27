@@ -18,6 +18,18 @@ in {
           addr = "irc.libera.chat";
           realname = profile.realname;
           nicks = profile.nicks;
+          join = [];
+        }
+        {
+          tls = true;
+          port = 6697;
+          addr = "irc.oftc.net";
+          realname = profile.realname;
+          nicks = profile.nicks;
+          join = [
+            "#oftc"
+            "#moocows"
+          ];
         }
       ];
       defaults = {
