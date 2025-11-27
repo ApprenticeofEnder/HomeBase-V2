@@ -18,7 +18,9 @@ in {
           addr = "irc.libera.chat";
           realname = profile.realname;
           nicks = profile.nicks;
-          join = [];
+          join = [
+            "#libera"
+          ];
         }
         {
           tls = true;
