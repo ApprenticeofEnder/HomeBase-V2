@@ -1,4 +1,8 @@
 {
+  imports = [
+    ../../modules/shared/nix
+  ];
+
   nixpkgs.config = {
     allowUnfree = true;
   };
