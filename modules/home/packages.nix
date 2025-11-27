@@ -43,6 +43,7 @@
     less # needed for Ubuntu
     just
     tree
+    zotero
     lazyssh
     termscp
     cargo-seek
