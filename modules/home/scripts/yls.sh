@@ -1,7 +1,5 @@
 function divider() {
-  set +x
   echo "---------------------------------------"
-  set -x
 }
 
 function try() {
@@ -9,6 +7,12 @@ function try() {
   TARGET="$2"
 
   echo "Trying '$PROGRAM' on '$TARGET'..."
+
+  if [ "$PROGRAM" == "where" ]; then
+    type -a "$TARGET"
+    divider
+    return
+  fi
 
   if ! command -v "$PROGRAM" >/dev/null 2>&1; then
     echo "$PROGRAM not found on this system." >&2
