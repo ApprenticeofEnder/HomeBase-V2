@@ -72,18 +72,56 @@
 in {
   home.packages = with pkgs;
     [
+      (writeShellScriptBin "yls" ''
+        function divider(){
+          unset -x
+          echo "---------------------------------------"
+          set -x
+        }
+
+        set -x
+
+        TARGET="$1"
+
+        which $TARGET
+
+        divider
+
+        if [ -x "$(command -v where)" ]; then
+          where $TARGET
+
+          divider
+        fi
+
+        if [ -x "$(command -v where)" ]; then
+          whereis $TARGET
+
+          divider
+        fi
+
+        if [ -x "$(command -v brew)" ]; then
+          brew list | grep $TARGET
+
+          divider
+        fi
+
+        if [ -x "$(command -v apt)" ]; then
+          apt list --installed | grep $TARGET
+
+          divider
+        fi
+
+        if [ -x "$(command -v yay)" ]; then
+          yay -Qqe | grep $TARGET
+
+          divider
+        fi
+      '')
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
       # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
       # # fonts?
       # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-      # # You can also create simple shell scripts directly inside your
-      # # configuration. For example, this adds a command 'my-hello' to your
-      # # environment:
-      # (pkgs.writeShellScriptBin "my-hello" ''
-      #   echo "Hello, ${config.home.username}!"
-      # '')
     ]
     ++ dev
     ++ security
