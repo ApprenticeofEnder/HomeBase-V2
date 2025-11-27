@@ -43,6 +43,7 @@
     less # needed for Ubuntu
     just
     tree
+    ttyd
     zotero
     lazyssh
     termscp
