@@ -43,4 +43,5 @@ function pathunmunge() {
 
 pathappend PATH "${HOME}/.local/bin"
 
+# TODO: Move this out of the `files` directory
 source "${HOME}/.config/op/plugins-nix.sh"
