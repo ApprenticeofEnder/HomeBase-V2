@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   programs.kitty = {
-    enable = true;
+    enable = false;
     enableGitIntegration = true;
 
     shellIntegration = {
@@ -51,7 +51,7 @@
 
       enabled_layouts = "tall:bias=50;full_size=1;mirrored=false";
 
-      include = ./nord-theme.conf;
+      # include = ./nord-theme.conf;
     };
 
     # extraConfig = ''
