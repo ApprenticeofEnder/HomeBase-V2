@@ -41,6 +41,6 @@ function pathunmunge() {
 	eval "$var=${value}; export $var;"
 }
 
-pathprepend PATH "${HOME}/.local/bin"
+pathappend PATH "${HOME}/.local/bin"
 
 source "${HOME}/.config/op/plugins-nix.sh"
