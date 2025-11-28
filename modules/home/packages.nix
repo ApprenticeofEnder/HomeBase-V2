@@ -33,6 +33,7 @@
 
   devops = with pkgs; [
     act
+    pulumi
     ansible
     gama-tui
     opentofu
