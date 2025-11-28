@@ -64,7 +64,9 @@
     utm
 
     # acre security
-    dotnet-runtime_10
+    dotnet-sdk
+    dotnet-runtime
+    # dotnet-runtime_10
   ];
 
   fun = with pkgs; [
