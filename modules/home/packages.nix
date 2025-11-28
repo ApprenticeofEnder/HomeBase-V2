@@ -62,6 +62,9 @@
 
   darwin = with pkgs; [
     utm
+
+    # acre security
+    dotnet-runtime_10
   ];
 
   fun = with pkgs; [
