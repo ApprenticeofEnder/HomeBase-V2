@@ -1,6 +1,8 @@
 {pkgs, ...}: {
-  programs.spotify-player.enable = true;
-  home.packages = with pkgs; [
-    alsa-lib-with-plugins
-  ];
+  programs.spotify-player = {
+    enable = true;
+    package = pkgs.spotify-player.override {
+      withAudioBackend = "pulseaudio";
+    };
+  };
 }
