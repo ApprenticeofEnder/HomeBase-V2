@@ -34,19 +34,23 @@
   devops = with pkgs; [
     act
     ansible
+    gama-tui
     opentofu
     ansible-lint
   ];
 
   utility = with pkgs; [
-    pik
-    less # needed for Ubuntu
+    pik # process info
     just
+    less # needed for Ubuntu
+    lynx
     tree
     ttyd
+    md-tui
     zotero
     lazyssh
     termscp
+    wiki-tui
     cargo-seek
     presenterm
   ];
