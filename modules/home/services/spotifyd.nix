@@ -5,6 +5,6 @@
   ...
 }: {
   services.spotifyd = {
-    enable = true;
+    enable = pkgs.stdenv.isLinux;
   };
 }
