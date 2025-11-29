@@ -26,6 +26,7 @@
     nmap
     gnutls
     tcpdump
+    pulumi-esc
     # wireshark # TODO: Figure out why THIS one fails
     # _1password-gui # TODO: Work out the whole user/group requirement thing
     # _1password-cli
