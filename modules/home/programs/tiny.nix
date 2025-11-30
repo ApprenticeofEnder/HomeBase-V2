@@ -1,10 +1,14 @@
-{ config, pkgs, ... }:
+{ config
+, pkgs
+, ...
+}:
 let
   profile = {
     realname = config.me.fullname;
     nicks = [ config.me.username ];
   };
-in {
+in
+{
   programs.tiny = {
     enable = pkgs.stdenv.isLinux;
     settings = {
@@ -23,7 +27,10 @@ in {
           addr = "irc.oftc.net";
           realname = profile.realname;
           nicks = profile.nicks;
-          join = [ "#oftc" "#moocows" ];
+          join = [
+            "#oftc"
+            "#moocows"
+          ];
         }
       ];
       defaults = {

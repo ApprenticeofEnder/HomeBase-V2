@@ -2,7 +2,8 @@
 let
   inherit (flake) inputs;
   inherit (inputs) self;
-in {
+in
+{
   imports = [ self.homeModules.default ];
 
   # Defined by /modules/home/me.nix

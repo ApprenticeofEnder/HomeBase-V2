@@ -1,5 +1,6 @@
 {
-  description = "A home-manager template providing useful tools & settings for Nix-based development";
+  description =
+    "A home-manager template providing useful tools & settings for Nix-based development";
 
   inputs = {
     # Principle inputs (updated by `nix run .#update`)
@@ -12,7 +13,8 @@
     nixos-unified.url = "github:srid/nixos-unified";
 
     lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
+      url =
+        "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,12 +29,13 @@
   # Wired using https://nixos-unified.org/guide/autowiring
   outputs = inputs:
     let
-      flake =
-        inputs.nixos-unified.lib.mkFlake
-          {
-            inherit inputs;
-            root = ./.;
-          };
+      flake = inputs.nixos-unified.lib.mkFlake {
+        inherit inputs;
+        root = ./.;
+      };
     in
-    flake;
+    flake // {
+      formatter.x86_64-linux =
+        inputs.nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
+    };
 }

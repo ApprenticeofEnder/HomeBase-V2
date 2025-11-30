@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.kitty = {
     enable = false;
     enableGitIntegration = true;
@@ -21,7 +22,9 @@
       "ctrl+c" = "copy_and_clear_or_interrupt";
     };
 
-    environment = { LS_COLORS = "1"; };
+    environment = {
+      LS_COLORS = "1";
+    };
 
     settings = {
       # cursor_trail = 1;

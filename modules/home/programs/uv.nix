@@ -1,1 +1,6 @@
-{ pkgs, ... }: { programs.uv = { enable = true; }; }
+{ pkgs, ... }:
+{
+  programs.uv = {
+    enable = true;
+  };
+}

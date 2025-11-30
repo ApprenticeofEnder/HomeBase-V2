@@ -1,6 +1,8 @@
 {
-# config,
-... }: {
+  # config,
+  ...
+}:
+{
   services.cachix-agent = {
     enable = false;
     verbose = true;

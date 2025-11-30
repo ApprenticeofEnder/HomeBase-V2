@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   services.ollama = {
     enable = pkgs.stdenv.isLinux; # TODO: Investigate detecting gpus
     port = 11434; # default

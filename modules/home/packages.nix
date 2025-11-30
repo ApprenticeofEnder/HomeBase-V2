@@ -1,4 +1,7 @@
-{ lib, pkgs, ... }:
+{ lib
+, pkgs
+, ...
+}:
 let
   dev = with pkgs; [
     fd
@@ -55,12 +58,14 @@ let
     presenterm
   ];
 
-  linux = with pkgs; [ lazyjournal systemctl-tui ];
+  linux = with pkgs; [
+    lazyjournal
+    systemctl-tui
+  ];
 
-  x86Linux = with pkgs;
-    [
-      impala # wifi management
-    ];
+  x86Linux = with pkgs; [
+    impala # wifi management
+  ];
 
   darwin = with pkgs; [
     utm
@@ -71,9 +76,16 @@ let
     # dotnet-runtime_10
   ];
 
-  fun = with pkgs; [ genact smassh cmatrix asciiquarium ];
-in {
-  home.packages = with pkgs;
+  fun = with pkgs; [
+    genact
+    smassh
+    cmatrix
+    asciiquarium
+  ];
+in
+{
+  home.packages =
+    with pkgs;
     [
       (writeShellScriptBin "yls" (builtins.readFile ./scripts/yls.sh))
       # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -81,7 +93,12 @@ in {
       # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
       # # fonts?
       # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-    ] ++ dev ++ security ++ devops ++ utility ++ fun
+    ]
+    ++ dev
+    ++ security
+    ++ devops
+    ++ utility
+    ++ fun
     ++ lib.optionals stdenv.isLinux linux
     ++ lib.optionals (stdenv.isLinux && stdenv.isx86_64) x86Linux
     ++ lib.optionals stdenv.isDarwin darwin;

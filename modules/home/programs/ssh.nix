@@ -1,10 +1,12 @@
 { pkgs, ... }:
 let
-  identityAgent = if pkgs.stdenv.isLinux then
-    "~/.1password/agent.sock"
-  else
-    "'~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock'";
-in {
+  identityAgent =
+    if pkgs.stdenv.isLinux then
+      "~/.1password/agent.sock"
+    else
+      "'~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock'";
+in
+{
   programs.ssh = {
     enable = true;
     # includes = [];
@@ -52,7 +54,9 @@ in {
         host = "rabbit-holes.ctf";
         hostname = "10.0.2.51";
         checkHostIP = true;
-        extraOptions = { strictHostKeyChecking = "no"; };
+        extraOptions = {
+          strictHostKeyChecking = "no";
+        };
         identityFile = [ "~/.ssh/cybersci_2025_regionals.pub" ];
         identityAgent = [ identityAgent ];
         identitiesOnly = true;
@@ -64,7 +68,9 @@ in {
         host = "trc.ctf";
         hostname = "10.0.2.41";
         checkHostIP = true;
-        extraOptions = { strictHostKeyChecking = "no"; };
+        extraOptions = {
+          strictHostKeyChecking = "no";
+        };
         identityFile = [ "~/.ssh/cybersci_2025_regionals.pub" ];
         identityAgent = [ identityAgent ];
         identitiesOnly = true;
@@ -109,7 +115,9 @@ in {
         checkHostIP = true;
         addKeysToAgent = "yes";
         hostname = "192.168.50.241";
-        setEnv = { TERM = "xterm-256color"; };
+        setEnv = {
+          TERM = "xterm-256color";
+        };
 
         # addressFamily = null; # "any" | "inet" | "inet6"
         # certificateFile = [ ./.file ];
