@@ -1,11 +1,8 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{ config, pkgs, ... }:
+let
   profile = {
     realname = config.me.fullname;
-    nicks = [config.me.username];
+    nicks = [ config.me.username ];
   };
 in {
   programs.tiny = {
@@ -18,9 +15,7 @@ in {
           addr = "irc.libera.chat";
           realname = profile.realname;
           nicks = profile.nicks;
-          join = [
-            "#libera"
-          ];
+          join = [ "#libera" ];
         }
         {
           tls = true;
@@ -28,16 +23,13 @@ in {
           addr = "irc.oftc.net";
           realname = profile.realname;
           nicks = profile.nicks;
-          join = [
-            "#oftc"
-            "#moocows"
-          ];
+          join = [ "#oftc" "#moocows" ];
         }
       ];
       defaults = {
         nicks = profile.nicks;
         realname = profile.realname;
-        join = [];
+        join = [ ];
         tls = true;
       };
     };

@@ -1,13 +1,7 @@
 {
-  imports = [
-    ../../modules/shared/nix
-  ];
+  imports = [ ../../modules/shared/nix ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
+  nixpkgs.config = { allowUnfree = true; };
 
-  home.shellAliases = {
-    docker = "podman";
-  };
+  home.shellAliases = { docker = "podman"; };
 }

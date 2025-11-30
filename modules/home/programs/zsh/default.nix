@@ -1,16 +1,9 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}: {
+{ pkgs, lib, config, ... }: {
   programs.zsh = {
     enable = true;
     autocd = false;
     enableCompletion = true;
-    shellAliases = {
-      mkdir = "mkdir -p";
-    };
+    shellAliases = { mkdir = "mkdir -p"; };
 
     # plugins = [
     #   {
@@ -33,22 +26,12 @@
 
     autosuggestion = {
       enable = true;
-      strategy = [
-        "history"
-        "completion"
-      ];
+      strategy = [ "history" "completion" ];
     };
 
     syntaxHighlighting = {
       enable = true;
-      highlighters = [
-        "line"
-        "main"
-        "root"
-        "regexp"
-        "pattern"
-        "brackets"
-      ];
+      highlighters = [ "line" "main" "root" "regexp" "pattern" "brackets" ];
     };
 
     initContent = builtins.readFile ./init-extra.zsh;
@@ -56,21 +39,16 @@
     oh-my-zsh = {
       enable = true;
       theme = "nanotech";
-      plugins =
-        [
-          "git"
-          "sudo"
-          "direnv"
-          "docker"
-          "kubectl"
-          "colorize"
-          "docker-compose"
-          "colored-man-pages"
-        ]
-        ++ lib.optionals pkgs.stdenv.isDarwin [
-          "dash"
-          "macos"
-        ];
+      plugins = [
+        "git"
+        "sudo"
+        "direnv"
+        "docker"
+        "kubectl"
+        "colorize"
+        "docker-compose"
+        "colored-man-pages"
+      ] ++ lib.optionals pkgs.stdenv.isDarwin [ "dash" "macos" ];
       extraConfig = ''
         zstyle ':omz:update' mode reminder
       '';

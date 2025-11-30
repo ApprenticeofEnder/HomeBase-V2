@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.yazi = {
     enable = true;
     shellWrapperName = "yy";
@@ -8,30 +8,17 @@
     # flavors = { inherit (pkgs.yaziPlugins); };
     # theme = {};
     plugins = {
-      inherit
-        (pkgs.yaziPlugins)
-        git
-        sudo
-        lazygit
-        restore
-        yatline
-        smart-paste
-        smart-enter
-        full-border
-        smart-filter
-        rich-preview
+      inherit (pkgs.yaziPlugins)
+        git sudo lazygit restore yatline smart-paste smart-enter full-border
+        smart-filter rich-preview
         # wl-clipboard
         yatline-githead
         # yatline-catppuccin
-        ;
+      ;
     };
     settings = {
       mgr = {
-        ratio = [
-          1
-          4
-          3
-        ];
+        ratio = [ 1 4 3 ];
         show_hidden = true;
         show_symlink = true;
         sort_dir_first = true;

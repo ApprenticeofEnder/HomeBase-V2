@@ -1,8 +1,4 @@
-{pkgs, ...}: {
-  home.shellAliases = {
-    cat = "bat";
-  };
-  programs.bat = {
-    enable = true;
-  };
+{ pkgs, ... }: {
+  home.shellAliases = { cat = "bat"; };
+  programs.bat = { enable = true; };
 }

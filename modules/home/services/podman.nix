@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   services.podman = {
     enable = pkgs.stdenv.isLinux;
     enableTypeChecks = true;

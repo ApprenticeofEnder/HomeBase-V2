@@ -1,9 +1,7 @@
 {
   programs.btop = {
     enable = true;
-    themes = {
-      nordic = builtins.readFile ./themes/nordic.theme;
-    };
+    themes = { nordic = builtins.readFile ./themes/nordic.theme; };
     settings = {
       color_theme = "nordic";
       vim_keys = true;

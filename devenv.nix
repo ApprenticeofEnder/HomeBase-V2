@@ -1,10 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  inputs,
-  ...
-}: {
+{ pkgs, lib, config, inputs, ... }: {
   # https://devenv.sh/basics/
   env.GREET = "devenv";
 
@@ -25,11 +19,7 @@
   };
 
   # https://devenv.sh/packages/
-  packages = with pkgs; [
-    just
-    nixd
-    pulumi-esc
-  ];
+  packages = with pkgs; [ just nixd pulumi-esc ];
 
   # https://devenv.sh/languages/
   # languages.rust.enable = true;

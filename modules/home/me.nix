@@ -1,6 +1,5 @@
 # User configuration module
-{ config, lib, ... }:
-{
+{ config, lib, ... }: {
   options = {
     me = {
       username = lib.mkOption {
@@ -17,7 +16,5 @@
       };
     };
   };
-  config = {
-    home.username = config.me.username;
-  };
+  config = { home.username = config.me.username; };
 }

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs = {
     neovim = {
       enable = true;
@@ -8,7 +8,7 @@
       withNodeJs = true;
       withPython3 = true;
       defaultEditor = true;
-      plugins = with pkgs.vimPlugins; [LazyVim qmk-nvim];
+      plugins = with pkgs.vimPlugins; [ LazyVim qmk-nvim ];
     };
   };
 

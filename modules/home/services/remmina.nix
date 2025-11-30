@@ -1,4 +1,1 @@
-{pkgs, ...}:
-with pkgs; {
-  services.remmina.enable = stdenv.isLinux;
-}
+{ pkgs, ... }: with pkgs; { services.remmina.enable = stdenv.isLinux; }
