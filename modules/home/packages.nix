@@ -36,6 +36,7 @@
     act
     pulumi
     ansible
+    kubectl
     gama-tui
     opentofu
     ansible-lint

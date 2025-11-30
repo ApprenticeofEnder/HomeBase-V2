@@ -8,7 +8,9 @@
     enable = true;
     autocd = false;
     enableCompletion = true;
-    shellAliases.mkdir = "mkdir -p";
+    shellAliases = {
+      mkdir = "mkdir -p";
+    };
 
     # plugins = [
     #   {
