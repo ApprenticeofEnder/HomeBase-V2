@@ -1,3 +1,42 @@
+# hygg # TUI book reader
+# pog
+# uvx parllama
+# uvx netshow
+# uvx exosphere
+# cargo-selector
+# systemd-manager-tui
+# tewi
+# ssh-para
+# terminaltexteffects
+# nemu
+# doxx
+# hwinfo-tui
+# fnug
+# godap
+# jwt-tui
+# mcp-probe
+# mcp-nixos
+# bagels
+# moneyterm
+# ticker
+# mqtttui
+# taproom
+# tuistash
+# arduino-cli-interactive # github.com/Vaishnav-Sabari-Girish/arduino-cli-interactive?ref=terminaltrove
+# ballast
+# calcure
+# duf
+# goto
+# sshclick
+# hostctl
+# lssh
+# neoss
+# nap
+# pinix
+# lazy-etherscan
+# chamber
+# tick-rs
+
 { lib, pkgs, ... }:
 let
   dev = with pkgs; [
