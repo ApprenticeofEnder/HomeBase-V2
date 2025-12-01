@@ -7,5 +7,6 @@
 
   home.shellAliases = {
     docker = "podman";
+    pathlist = "printenv PATH | tr ':' '\n'";
   };
 }
