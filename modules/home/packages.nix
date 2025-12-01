@@ -11,6 +11,7 @@ let
     gnumake
     vi-mongo
     nodejs_24
+    typst
     shellcheck
     mermaid-cli
     # nix-specific
